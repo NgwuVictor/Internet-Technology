@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Keystone Bridge</title>
+    <link rel="stylesheet" href="gallery.css">
+  </head>
+  <body>
+    <div class="nav">
+      <!--  <a href="index.html"><img src="logo2.png" alt="logo" width="80"></a>-->
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="contact.html">CONTACT</a>
+     
+    </div>
+    <!--<img class="homeimg" src="school.jpg" alt="IMG NOT FOUND">-->
+    <div class="resources">
+        <h1>A look at Keystone Bridge High School</h1>
+        <br>
+        <p > At Keystone Bridge High school we strive for academic excellence by providing the best environment for education </p>
+        <table>
+        <tr>
+        <td><img src="images/img1.jpg" style="width:350px" height="200" >   </td>
+        <td><img src="images/img2.jpg" style="width:350px" height="200" > </td>
+        <td> <img src="images/img3.jpg" style="width:350px"height="200"  > </td>
+        </table>
+        <br>
+        <table>
+        <p >We provide the best equipment needed to produce the best players</p>
+        <td> <img src="images/img4.jpg" style="width:350px" height="200" >   </td>
+        <td> <img src="images/img5.png" style="width:350px" height="200" > </td>
+        <td> <img src="images/img9.jpg" style="width:350px" height="200" > </td>
+        </table>
+        <table>
+        <p >A glance at our top notch library, laboratory and computer center</p>
+        <td><img src="images/img7.jpg" style="width:350px" height="200" >   </td>
+        <td><img src="images/img8.jpg" style="width:350px" height="200" > </td>
+        <td><img src="images/img6.jpg" style="width:350px" height="200" > </td>
+        </table>
+        </tr>
+
+    </div>
+    
+    <div id="randomGallery">
+      <form>
+          <label for="width">width</label><br>
+              <input type="number" min="300" max="1000" id="width"><br>
+          <label for="height">height</label><br>
+              <input type="number" min="300" max="450" id="height"><br>
+          <label for="border">border</label><br>
+              <input type="number" min="1" max="20" id="border"><br>
+          <label for="t_alt">alt text</label><br>
+              <input type="text" size="20" id="alt"><br><br>
+          <input type=button value="change picture" onclick="change()"> 
+      </form>
+      <div id="rand">
+          <img id=myimg src="./images/img1.jpg" style="width:100px"alt="nature">
+      </div>
+  </div>
+<script type="text/javascript">
+  var arr=new Array("../img/1.jpg","../img/2.jpg","../img/3.png");  
+  
+  
+  width.onchange = function(){
+      myimg.style.width = this.value + "px";
+  }
+  
+  
+  height.onchange = function(){
+      myimg.style.height = this.value + "px";
+  }
+  
+ 
+  border.onchange = function(){
+      img = document.getElementById("myimg");
+      img.border=border.value;
+      img.style.borderColor="black";
+  }
+  
+  
+  alt.onchange = function(){
+      img = document.getElementById("myimg");
+      img.alt=alt.value;
+  }
+
+  /
+  function change(){
+      var r=Math.floor(Math.random()*arr.length);
+      document.getElementById("myimg").src=arr[r];   
+  }
+</script>
+  </body>
+</html>
